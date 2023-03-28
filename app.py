@@ -12,9 +12,12 @@ st.write('omorfa')
 # df["No"].unique().sort()
 mylist = df["No"].unique()
 mylist.sort()
+
+field_list = list(df)[1:]
+field_list.sort()
 st.sidebar.header('Please Filter Here')
 city = st.sidebar.selectbox("Select City:", options=mylist,)
-field = st.sidebar.selectbox("Select Stadium:", list(df)[1:],)
+field = st.sidebar.selectbox("Select Stadium:", field_list,)
 st.write(field)
 
 st.info(f' From {city} to {field}')
