@@ -20,11 +20,19 @@ city = st.sidebar.selectbox("Select City:", options=mylist,)
 field = st.sidebar.selectbox("Select Stadium:", field_list,)
 st.write(field)
 
-st.info(f' From {city} to {field} € ')
+
 df_select = df.query("City == @city")[['City', field]]
 st.dataframe(df_select)
 val = str(df_select[[field]])
+
+value2 = df_select[field].tolist()
+st.info(f' From {city} to {field} €{value2[-1]} ')
 st.title(f'{val[-2:]}')
 
-st.title(f' From  -{city}- to  -{field}- is €{val[-2:]} ')
-st.info(f' From " {city} " to " {field} " is €{val[-2:]} ')
+st.title(f' From  -{city}- to  -{field}- is €{value2[-1]} ')
+st.info(f' {value2} ')
+
+columns = ['City', 'Stadium', 'Amount']
+data_for_df = [(city, field, value2[-1])]
+table_df = pd.DataFrame(data_for_df, columns=columns)
+st.table(table_df)
