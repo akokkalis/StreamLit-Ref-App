@@ -5,12 +5,15 @@ df = pd.read_excel('trasn_cost.xlsx')
 
 
 st.set_page_config(page_title='my page', page_icon=':car:',)
-st.title('Odoiporika Diathtwn 2022-2023')
+st.title('Οδοιπορικά Διαιτητών που Δημοσιευθήκαν το 2022')
 st.write('omorfa')
 # st.table(df)
 # st.dataframe(df)
+# df["No"].unique().sort()
+mylist = df["No"].unique()
+mylist.sort()
 st.sidebar.header('Please Filter Here')
-city = st.sidebar.selectbox("Select City:", options=df["No"].unique(),)
+city = st.sidebar.selectbox("Select City:", options=mylist,)
 field = st.sidebar.selectbox("Select Stadium:", list(df)[1:],)
 st.write(field)
 
