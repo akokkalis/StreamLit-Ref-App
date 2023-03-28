@@ -21,6 +21,6 @@ field = st.sidebar.selectbox("Select Stadium:", field_list,)
 st.write(field)
 
 st.info(f' From {city} to {field}')
-df_select = df.query("No == @city")[['City', field]]
+df_select = df.query("City == @city")[['City', field]]
 st.dataframe(df_select)
 st.title('test')
