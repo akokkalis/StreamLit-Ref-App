@@ -10,7 +10,7 @@ st.write('omorfa')
 # st.table(df)
 # st.dataframe(df)
 # df["No"].unique().sort()
-mylist = df["No"].unique()
+mylist = df["City"].unique()
 mylist.sort()
 
 field_list = list(df)[1:]
