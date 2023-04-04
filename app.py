@@ -13,7 +13,7 @@ col1, col2 = st.columns(2, gap="small")
 with col1:
     st.image(image, width=200)
 with col2:
-    st.title('Οδοιπορικά Διαιτητών που Δημοσιευθήκαν το 2022')
+    st.title('Cyprus Referee Travelling Costs Published On  2022')
 # st.write('omorfa')
 # st.table(df)
 # st.dataframe(df)
