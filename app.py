@@ -1,6 +1,14 @@
 import streamlit as st
 import pandas as pd
 from PIL import Image
+
+hide_st_style = '''
+                    <style>
+                    #MainMenu{visibility: hidden;}
+                    footer{visibility: hidden;}
+                    </style>
+                '''
+# st.markdown(hide_st_style, unsafe_allow_html=True)
 df = pd.read_excel('trasn_cost.xlsx')
 
 image = Image.open('favicon-300x300.png')
@@ -8,7 +16,7 @@ image = Image.open('favicon-300x300.png')
 st.set_page_config(page_title='Cyprus Referees',
                    page_icon='favicon-300x300.png',)
 
-
+st.markdown(hide_st_style, unsafe_allow_html=True)
 col1, col2 = st.columns(2, gap="small")
 with col1:
     st.image(image, width=200)
